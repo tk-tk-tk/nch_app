@@ -1,0 +1,9 @@
+
+%h1 the List of Users
+%hr
+- @users.each do |user|
+  = user.name
+  = user.email
+
+%hr
+= link_to "return to the List of the Threads", "/boards"

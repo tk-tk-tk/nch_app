@@ -1,0 +1,13 @@
+= link_to "スレッド一覧に戻る", "/boards"
+%hr
+%h1 Create New Boards
+
+= form_for @boards do |f|
+
+    = f.label :title, "スレッド名"
+    = f.text_field :title
+
+    = f.label :editor, "編集者"
+    = f.text_field :editor
+
+    = f.submit
