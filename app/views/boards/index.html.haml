@@ -1,11 +1,9 @@
-
 = link_to "create new thread", "/boards/new"
 = link_to "create new user", "/users/new"
 %hr
 %h1 Nch Board
 %hr
 - @boards.each do |board|
-  = board.title
-
+  = link_to board.title, "/boards/#{board.id}"
 %hr
 = link_to "check the list of users", "/users"

@@ -1,13 +1,19 @@
 Rails.application.routes.draw do
-  root "boards#index"
+  devise_for :signs
+  root 'boards#index'
   get 'boards' => 'boards#index'
   get 'boards/new' => 'boards#new'
   post 'boards' => 'boards#create'
 
-
+  resources :boards
   get 'users' => 'users#index'
   get 'users/new' => 'users#new'
   post 'users' => 'users#create'
+
+  get 'boards/:id' => 'boards#show'
+
+
+  get 'signs' => 'signs#new'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
