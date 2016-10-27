@@ -7,12 +7,15 @@ class BoardsController < ApplicationController
     @boards = Board.new
   end
 
+  def show
+    @boards = Board.find(params[:id])
+  end
+
   def create
-    # binding.pry
     # @boards = Board.new(params[:board][:title], params[:board][:editor])
     @boards = Board.new(boards_params)
     if @boards.save
-      redirect_to root_path
+      redirect_to @boards
     else
       redirect_to root_path
     end
